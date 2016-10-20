@@ -8,6 +8,9 @@ let mapleader=";"
 " " show hidden files
  let NERDTreeShowHidden=1
 
+" remove whitespace
+autocmd FocusLost,BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
 nmap <leader>cp :CopyPath<cr>
 
 for fpath in split(globpath(vimsettings, '*.vim'), '\n')
