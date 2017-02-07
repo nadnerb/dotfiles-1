@@ -8,6 +8,15 @@ let mapleader=";"
 " " show hidden files
  let NERDTreeShowHidden=1
 
+" jj for escape, screw this escape/caps malarkey
+nnoremap j gj
+nnoremap k gk
+inoremap jj <Esc>
+nnoremap JJJJ <Nop>
+
+" allow underscore to delimit words"
+set iskeyword-=_
+
 " remove whitespace
 autocmd FocusLost,BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
